@@ -77,3 +77,6 @@ function d(pizzas){
         })
     })    
 }
+
+const nombre = document.getElementById("nombre")
+console.log(nombre)
