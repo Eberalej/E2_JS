@@ -1,3 +1,4 @@
+/*
 const pizzas = [
     {
         id: 1,
@@ -76,7 +77,58 @@ function d(pizzas){
         console.log('-' + ingrediente)
         })
     })    
+}*/
+
+const input = document.getElementById("input");
+const h2 = document.getElementById("h2");
+const h4 = document.getElementById("h4");
+const btn = document.getElementById("btn");
+
+
+class pizza {
+    constructor(ID, nombre, ingredientes, precio) {
+        this.ID = ID
+        this.nombre = nombre
+        this.ingredientes = ingredientes
+        this.precio = precio
+    }
+
 }
 
-const nombre = document.getElementById("nombre")
-console.log(nombre)
+let pizzas = [pepperoni = new pizza(`1`, `Pizza de Pepperoni`, ingredientes = [" Pepperoni ", " Tomate ", " Queso ", " Orégano "], 15),
+    cuatroEstaciones = new pizza(`2`, `Pizza Cuatro Estaciones`, ingredientes = [" Alcachofas ", " Jamón ", " Queso ", " Champiñones "], 20),
+    hawaiana = new pizza(`3`, `Pizza Hawaiana`, ingredientes = [" Piña ", " Mozzarella ", " Jitomates ", " Jamón "], 17),
+    marinara = new pizza(`4`, `Pizza Marinara`, ingredientes = [" Jitomates ", " Cebollas ", " Ajo ", " Hierbas Aromáticas "], 16),
+    neoyorquina = new pizza(`5`, `Pizza Neoyorquina`, ingredientes = [" Jitomates ", " Verduras ", " Queso ", " Carnes "], 18),
+    fugazza = new pizza(`6`, `Pizza Fugazza`, ingredientes = [" Cebolla ", " Tomate ", " Queso ", " Aceitunas "], 19),
+]
+
+
+// Función que se ejecuta si el resultado es correcto
+function filtro(inputID) {
+    const laPizza = pizzas.filter((piza) => piza.ID == inputID)
+    for (piza of laPizza) {
+        h2.innerHTML = `${piza.nombre}`;
+        h4.innerHTML = `$ ${piza.precio}`;
+    }
+}
+
+// Función que se ejecuta si el resultado es erroneo
+function error() {
+
+    h2.innerHTML = `No existe pizza para ese nro.`;
+    h4.innerHTML = ``;
+
+}
+
+
+// acción del boton
+btn.addEventListener('click', button)
+
+
+function button(e) {
+    e.preventDefault();
+    var inputID = input.value.trim();
+    inputID <= pizzas.length && inputID > 0 ? filtro(inputID) : error();
+    input.value = ""
+}

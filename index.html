@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
     <title>Entrega 2_JavaScript</title>
 </head>
 <body>
-    <form class="form" action="">
-        <h2 id="nombre"></h2>
-        <h4 id="precio"></h4>
-        <div>
-            <label for="number">Número de pizza:</label>
-            <input id="number" type="number" name="number" placeholder="Ingresa un Valor">
-        </div>
-        <button class="btn" > Enviar </button>
-    </form>
+    <section>
+        <form class="form" action="">   
+            <div>
+                <h1> Menú de Pizzas </h1>
+            </div>
+
+            <div>
+                <label for="number">Número de pizza:</label>
+                <input id="input" class="controls" type="number" name="number" placeholder="Ingresa un Valor">
+            </div>
+
+            <button id="btn"> Mostrar </button>
+
+    <!-- Acá se van a estar renderizando todas las pizzas -->
+            <h2 id="h2"> </h2>
+            <h4 id="h4"> </h4>
+        
+        </form>
+    </section>
     <script src="./index.js"></script>
 </body>
 </html>
